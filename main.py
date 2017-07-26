@@ -50,10 +50,12 @@ while True:
     str_current_time = obj_current_time.strftime("%Y-%m-%d\t%Hh%Mm%Ss")
     bytes_port_data:bytes = obj_com_port.readline()
     str_port_data = str(bytes_port_data, 'utf-8', 'ignore')
-    str_complete_line = str(int_number_of_line).ljust(6, ' ') + '\t\t' + str_current_time + '\t\t' + str_port_data #+ '\r\n'  # .decode('utf-8').strip()
-    print(str_complete_line)
-    obj_log_file.write(str_complete_line)
-    obj_log_file.flush()
+    list_of_clear_strings_of_port_data = str_port_data.splitlines()
+    for str_one_clear_string_from_port in list_of_clear_strings_of_port_data:
+        str_complete_line = str(int_number_of_line).ljust(6, ' ') + '\t\t' + str_current_time + '\t\t' + str_one_clear_string_from_port
+        print(str_complete_line)
+        obj_log_file.write(str_complete_line+'\r\n')
+        obj_log_file.flush()
 
 print(obj_com_port.is_open)
 obj_com_port.close()
