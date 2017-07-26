@@ -1,72 +1,62 @@
 # coding=utf-8
 
-# coding=utf-8
 import os
 import time, datetime
 import serial.tools.list_ports
-
-'''
-mass = [1,2,3,4,5,6]
-for element in mass:
-    print(element)
-    if element == 3:
-        mass.remove(element)
-mass
-print(mass)
-'''
 
 ''' Проверка и создание папки для логов'''
 if not os.path.exists('logs'):
     os.makedirs('logs')
 
-''' Создание имени файла и самого файла  '''
+''' Создание имени лога файла '''
 time.sleep(1)      # дополнительная простая защита от создания одинаковых имен файла, тк имя содержит "секунду"
-now = datetime.datetime.now()
-str_current_time = now.strftime("%Y-%m-%d__%Hh%Mm%Ss____")
+obj_current_time = datetime.datetime.now()
+str_current_time = obj_current_time.strftime("%Y-%m-%d__%Hh%Mm%Ss____")
 str_new_log_file_name = str_current_time +'FM3'+'.log'
-str_complete_new_log_dir_and_file_name = os.path.join('logs',str_new_log_file_name)
-objLogFile = open(str_complete_new_log_dir_and_file_name,'w')
+str_complete_log_file_name = os.path.join('logs', str_new_log_file_name)
+''' Создание самого лог файла '''
+obj_log_file = open(str_complete_log_file_name, 'w')
 
 ''' Вывод спика имеющихся COM-портов '''
-ports = serial.tools.list_ports.comports()
-for port in ports:
-    print(str(port))
-    objLogFile.write(str(port)+'\r\n')  # .encode()
-    objLogFile.flush()
+list_of_ports = serial.tools.list_ports.comports()
+for str_port_name in list_of_ports:
+    print(str_port_name)
+    obj_log_file.write(str(str_port_name) + '\r\n')
+    obj_log_file.flush()
 
 ''' Подключение к COM-порту и его настройка '''
-ser = serial.Serial()
-ser.port = 'COM4'
-ser.baudrate = 57600
-ser.bytesize = 8
-ser.parity = 'N'
-ser.stopbits = 1
-ser.timeout = 60
-ser.xonxoff = 0
-ser.rtscts = 0
-res = ser.open()
+obj_com_port = serial.Serial()
+obj_com_port.port = 'COM4'
+obj_com_port.baudrate = 57600
+obj_com_port.bytesize = 8
+obj_com_port.parity = 'N'
+obj_com_port.stopbits = 1
+obj_com_port.timeout = 60
+obj_com_port.xonxoff = 0
+obj_com_port.rtscts = 0
+
+try:
+    tmp = obj_com_port.open()
+except:
+    print('could not open port')
+    obj_log_file.close()
+    print('fuck')
+    exit(0)
 
 int_number_of_line = 0
-while 1:
+while True:
     int_number_of_line += 1
-    now = datetime.datetime.now()
-    current_time = now.strftime("%Y-%m-%d\t%Hh%Mm%Ss")
-    # current_time = str(now.date()) + '\t' + str(now.hour) + 'h' + str(now.minute) + 'm' + str(now.second)+'s'
-    # line = str(int_number_of_line) +'\t'+ current_time +'\t\t'+ str(ser.readline().decode('utf-8').strip())
-    port_data:bytes = ser.readline()
-    # port_data = ser.readline()
-    # print("Bytes - `{0}`, string - `{1}`".format(repr(port_data), port_data.decode('utf-8')))
-    #port_data = port_data.decode()
-    port_data = str(port_data,'utf-8','ignore')
-    line = str(int_number_of_line).ljust(6,' ') + '\t\t' + current_time + '\t\t' + str(port_data) #+ '\r\n'  # .decode('utf-8').strip()
-    #print(line,end='')  # .encode('utf8')
-    #line=line.strip()
-    print(line)
-    objLogFile.write(line)
-    objLogFile.flush()
+    obj_current_time = datetime.datetime.now()
+    str_current_time = obj_current_time.strftime("%Y-%m-%d\t%Hh%Mm%Ss")
+    bytes_port_data:bytes = obj_com_port.readline()
+    str_port_data = str(bytes_port_data, 'utf-8', 'ignore')
+    str_complete_line = str(int_number_of_line).ljust(6, ' ') + '\t\t' + str_current_time + '\t\t' + str_port_data #+ '\r\n'  # .decode('utf-8').strip()
+    print(str_complete_line)
+    obj_log_file.write(str_complete_line)
+    obj_log_file.flush()
 
-print(ser.is_open)
-ser.close()
-print(ser.is_open)
-objLogFile.close()
+print(obj_com_port.is_open)
+obj_com_port.close()
+print(obj_com_port.is_open)
+obj_log_file.close()
 
