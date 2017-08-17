@@ -18,6 +18,10 @@ int_timeout = 5   # timeout (float) – Set a read timeout value.
 int_xonxoff = 0   # xonxoff (bool) – Enable software flow control.
 int_rtscts = 0    # rtscts (bool) – Enable hardware (RTS/CTS) flow control.
 
+''' Проверка и создание папки для логов'''
+if not os.path.exists('logs'):
+    os.makedirs('logs')
+
 ''' Создание имени для лог-файла '''
 time.sleep(1)      # дополнительная простая защита от создания одинаковых имен файла, тк имя содержит "секунду"
 obj_current_time = datetime.datetime.now()
@@ -73,12 +77,6 @@ except:
     input()
     exit()
 
-''' Проверка и создание папки для логов'''
-if not os.path.exists('logs'):
-    os.makedirs('logs')
-
-
-
 ''' Хитрое чтение из порта и формирование вспомогательных данных для прочитанных строк '''
 int_number_of_line:int = 1
 while True:
@@ -95,7 +93,6 @@ while True:
         obj_log_file.flush()
         int_number_of_line += 1
     time.sleep(1/30) # seconds для регулировки скорости вывода логов
-
 
 obj_com_port.close()
 obj_log_file.close()
