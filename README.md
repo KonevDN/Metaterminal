@@ -1,3 +1,18 @@
-# Metaterminal is terminal app for COM-port
+# ENG Metaterminal is console terminal app for read data from COM-port
 designed on python3 for Windows
- 
+# RU Metaterminal это консольное приложение для чтения логов из COM-порта
+разработано на языке python3 для Windows
+
+
+# RU настройки COM-порта по умолчанию 
+# ENG default settings of COM-port
+- str_name_of_device:str = 'FindMe3'
+- str_number_of_COM_port:str = 'COM4'
+- str_name_of_folder_for_logs:str = 'logs'
+- int_baudrate = 57600  # baudrate (int) – Baud rate such as 9600 or 115200 etc.
+- int_bytesize = 8  # bytesize – Number of data bits. Possible values: FIVEBITS, SIXBITS, SEVENBITS, EIGHTBITS
+- str_parity = 'N'  # parity – Enable parity checking. Possible values: PARITY_NONE, PARITY_EVEN, PARITY_ODD PARITY_MARK, PARITY_SPACE
+- int_stopbits = 1  # stopbits – Number of stop bits. Possible values: STOPBITS_ONE, STOPBITS_ONE_POINT_FIVE, STOPBITS_TWO
+- int_timeout = 5   # timeout (float) – Set a read timeout value.
+- int_xonxoff = 0   # xonxoff (bool) – Enable software flow control.
+- int_rtscts = 0    # rtscts (bool) – Enable hardware (RTS/CTS) flow control.
