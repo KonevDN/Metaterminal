@@ -1,0 +1,49 @@
+COM4 - Silicon Labs CP210x USB to UART Bridge (COM4)
+COM1 - Nuvoton Communications Port (COM1)
+COM5 - USB-SERIAL CH340 (COM5)
+Успешное открытие порта: COM4;
+Логируемое устройство: FindMe3;
+Имя лог-файла: logs\2017-08-17__15h49m23s____FindMe3.log;
+1             2017-08-17    15h49m23s        at+ciphead=1
+2             2017-08-17    15h49m23s        OK
+3             2017-08-17    15h49m23s        [+] at+ciphead=1
+4             2017-08-17    15h49m23s        at+cmgf=0
+5             2017-08-17    15h49m23s        OK
+6             2017-08-17    15h49m23s        [+] at+cmgf=0
+7             2017-08-17    15h49m23s        at&w
+8             2017-08-17    15h49m23s        OK
+9             2017-08-17    15h49m23s        [+] at&w
+10            2017-08-17    15h49m24s        D_GSM STEP: StepGsmCellularNetwork
+11            2017-08-17    15h49m24s        at+csq
+12            2017-08-17    15h49m24s        +CSQ: 16,0
+13            2017-08-17    15h49m24s        OK
+14            2017-08-17    15h49m24s        [+] at+csq
+15            2017-08-17    15h49m24s        ___CSQ: 16
+16            2017-08-17    15h49m24s        at+creg?
+17            2017-08-17    15h49m24s        +CREG: 0,2
+18            2017-08-17    15h49m24s        OK
+19            2017-08-17    15h49m24s        [+] at+creg?
+20            2017-08-17    15h49m24s        __CREG: 0,2 (find)
+21            2017-08-17    15h49m24s        D_GSM FIND ERR
+22            2017-08-17    15h49m24s        at+creg?
+23            2017-08-17    15h49m25s        +CREG: 0,2
+24            2017-08-17    15h49m25s        OK
+25            2017-08-17    15h49m25s        [+] at+creg?
+26            2017-08-17    15h49m25s        __CREG: 0,2 (find)
+27            2017-08-17    15h49m25s        D_GSM FIND ERR
+28            2017-08-17    15h49m25s        at+creg?
+29            2017-08-17    15h49m26s        +CREG: 0,1
+30            2017-08-17    15h49m26s        OK
+31            2017-08-17    15h49m26s        [+] at+creg?
+32            2017-08-17    15h49m26s        __CREG: 0,1 (home)
+33            2017-08-17    15h49m26s        D_GSM STEP: StepGsmProfileGprsConnect
+34            2017-08-17    15h49m26s        at+cgatt?
+35            2017-08-17    15h49m26s        +CGATT: 0
+36            2017-08-17    15h49m26s        OK
+37            2017-08-17    15h49m26s        [+] at+cgatt?
+38            2017-08-17    15h49m26s        at+cgatt=1
+39            2017-08-17    15h49m27s        [t] at+cgatt=1
+40            2017-08-17    15h49m28s        [t] at+cgatt=1
+41            2017-08-17    15h49m29s        [t] at+cgatt=1
+42            2017-08-17    15h49m30s        OK
+43            2017-08-17    15h49m30s        [+] at+cgatt=1

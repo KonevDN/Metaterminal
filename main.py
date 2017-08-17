@@ -6,7 +6,7 @@ import serial.tools.list_ports
 
 ''' Глобальные переменные '''
 # имена
-str_name_of_device:str = 'FindMe3_delete'
+str_name_of_device:str = 'FindMe3'
 str_number_of_COM_port:str = 'COM4'
 str_name_of_folder_for_logs:str = 'logs'
 # настройка COM-порта
@@ -53,18 +53,27 @@ obj_com_port.xonxoff = int_xonxoff
 obj_com_port.rtscts = int_rtscts
 
 '''' Подключение к COM-порту  '''
-try:
+try:    # если не будет получаться подключиться к порту, то это значит что скорее всего в этом блоке есть любая ошибка
     # попытка открытия порта
     obj_com_port.open()
     # выдача сообщения об успешно  результате открытия и запись в файл
-    str_message = "Успешное открытие порта %s;" % (str_number_of_COM_port)
+
+    str_message = "Успешное открытие порта: %s;" % (str_number_of_COM_port)
     print(str_message)
     obj_log_file.write(str_message + '\r\n')
     obj_log_file.flush()
-    str_message = "Логируемое устройство %s;" % (str_name_of_device)
-    print(str_message+'\r\n')
+
+    str_message = "Логируемое устройство: %s;" % (str_name_of_device)
+    print(str_message)
     obj_log_file.write(str_message + '\r\n')
     obj_log_file.flush()
+
+    str_message = "Имя лог-файла: %s;" % (str_complete_log_file_name)
+    print(str_message)
+    obj_log_file.write(str_message + '\r\n')
+    obj_log_file.flush()
+
+    print('',end='\r\n')
 
 except:
     print(obj_com_port.is_open)
