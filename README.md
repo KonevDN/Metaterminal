@@ -3,9 +3,14 @@ designed on python3 for Windows
 # RU Metaterminal это консольное приложение для чтения логов из COM-порта
 разработано на языке python3 для Windows
 
+# ENG A short guide 
+To use the application, simply 1) download the entire folder Metaterminal, 2) install Windows interpreter Python 3, and 3) double click the main file main.py data from the port will be read continuously, displayed on screen and written to a text file. If you need to configure the com port, it is at this stage still want to edit the file main.py.
 
-# RU настройки COM-порта по умолчанию 
+# RU Короткое руководство 
+Для использования приложения, достаточно 1) скачать всю папку Metaterminal, 2) установить в систему Окна интерпретатор Питон 3 и 3) запустить двойным щелчком главный файл main.py, данные из порта будут читаться постоянно, выводиться на экран и записываться в текстовый файл. Если нужно настроить com порт, то на данном этапе все еще следует редактировать файл main.py. 
+
 # ENG default settings of COM-port
+# RU настройки COM-порта по умолчанию 
 - str_name_of_device:str = 'FindMe3'
 - str_number_of_COM_port:str = 'COM4'
 - str_name_of_folder_for_logs:str = 'logs'
@@ -16,3 +21,6 @@ designed on python3 for Windows
 - int_timeout = 5   # timeout (float) – Set a read timeout value.
 - int_xonxoff = 0   # xonxoff (bool) – Enable software flow control.
 - int_rtscts = 0    # rtscts (bool) – Enable hardware (RTS/CTS) flow control.
+
+# Autor/Автор
+KonevDN@ya.ru 
