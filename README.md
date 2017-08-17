@@ -23,4 +23,5 @@ To use the application, simply 1) download the entire folder Metaterminal, 2) in
 - int_rtscts = 0    # rtscts (bool) – Enable hardware (RTS/CTS) flow control.
 
 # Autor/Автор
-KonevDN@ya.ru 
+- KonevDN@ya.ru
+- https://vk.com/KonevDN
