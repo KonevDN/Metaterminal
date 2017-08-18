@@ -5,16 +5,16 @@ designed on python3 for Windows
 
 # ENG A short guide 
 To use the application simply 
-1) download the entire folder Metaterminal, 
-2) install Windows interpreter Python 3, and then... 
-3) double click the main file main.py data from the port will be read continuously, displayed on screen and written to a text file. 
+1) download the entire folder Metaterminal 
+2) install Windows interpreter Python 3
+3) double click the main file main.py data from the port will be read continuously, displayed on screen and written to a text file in folder Metaterminal\logs. 
 4) If you need to configure the com port, it is at this stage still want to edit the file main.py.
 
 # RU Короткое руководство 
 Для использования приложения достаточно 
 1) скачать всю папку Metaterminal, 
-2) установить в систему Windows интерпретатор Питон 3 и затем...
-3) запустить двойным щелчком главный файл main.py, данные из порта будут читаться постоянно, выводиться на экран и записываться в текстовый файл. 
+2) установить в систему Windows интерпретатор Питон 3 .
+3) запустить двойным щелчком главный файл main.py, данные из порта будут читаться постоянно, выводиться на экран и записываться в текстовый файл в папку Metaterminal\logs. 
 4) Если нужно настроить com порт, то на данном этапе все еще следует редактировать файл main.py. 
 
 # ENG default settings of COM-port
