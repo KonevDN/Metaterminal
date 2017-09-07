@@ -1,10 +1,8 @@
+DESCRIPTION AND GUIDE
 
-# Metaterminal is terminal app for COM-port
+# ENG desciption: Metaterminal is console terminal app for read data from COM-port
 designed on python3 for Windows
- 
-# ENG Metaterminal is console terminal app for read data from COM-port
-designed on python3 for Windows
-# RU Metaterminal это консольное приложение для чтения логов из COM-порта
+# RU описание: Metaterminal это консольное приложение для чтения логов из COM-порта
 разработано на языке python3 для Windows
 
 # ENG A short guide 
