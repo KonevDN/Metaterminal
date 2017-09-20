@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Metaterminal.iml" filepath="$PROJECT_DIR$/.idea/Metaterminal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Metaterminal-Console.iml" filepath="$PROJECT_DIR$/.idea/Metaterminal-Console.iml" />
     </modules>
   </component>
 </project>
